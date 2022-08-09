@@ -185,4 +185,13 @@ module.exports = {
     tls13: '2.0.0',
     usesOpenssl: false,
   },
+  wildfly: {
+    highlighter: 'xml',
+    latestVersion: '2.1.2',
+    name: 'Wildfly/JBoss',
+    supportsHsts: true,
+    supportsOcspStapling: false,  // https://github.com/containous/traefik/issues/212
+    tls13: '2.0.0',
+    usesOpenssl: false,
+  }
 };

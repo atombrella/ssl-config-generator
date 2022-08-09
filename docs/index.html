@@ -5,10 +5,10 @@
       Read more about our custom configuration and use of Google Analytics here:
       https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
     -->
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66267220-1"></script>
     <script src="/analytics.js"></script>
-    
+
 
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src https://www.google-analytics.com; font-src 'self'; img-src 'self' https://www.google-analytics.com; script-src 'self' https://www.google-analytics.com/analytics.js https://www.googletagmanager.com/gtag/js; style-src 'self'">
@@ -38,191 +38,194 @@
         <!-- server software, populated from entries in configs.js with names -->
         <div class="col-12 col-md-2 form-server">
           <h5>Server Software</h5>
-          
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-apache" value="apache" >
               <label class="form-check-label" for="server-apache">
                 Apache
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-awsalb" value="awsalb" >
               <label class="form-check-label" for="server-awsalb">
                 AWS ALB
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-awselb" value="awselb" >
               <label class="form-check-label" for="server-awselb">
                 AWS ELB
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-caddy" value="caddy" >
               <label class="form-check-label" for="server-caddy">
                 Caddy
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-dovecot" value="dovecot" >
               <label class="form-check-label" for="server-dovecot">
                 Dovecot
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-exim" value="exim" >
               <label class="form-check-label" for="server-exim">
                 Exim
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-go" value="go" >
               <label class="form-check-label" for="server-go">
                 Go
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-haproxy" value="haproxy" >
               <label class="form-check-label" for="server-haproxy">
                 HAProxy
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-jetty" value="jetty" >
               <label class="form-check-label" for="server-jetty">
                 Jetty
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-lighttpd" value="lighttpd" >
               <label class="form-check-label" for="server-lighttpd">
                 lighttpd
               </label>
             </div>
-            
+
         </div>
         <div class="col-12 col-md-2 form-server">
         <h5 class="d-none d-md-block">&nbsp;</h5>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-mysql" value="mysql" >
               <label class="form-check-label" for="server-mysql">
                 MySQL
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-nginx" value="nginx" checked>
               <label class="form-check-label" for="server-nginx">
                 nginx
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-oraclehttp" value="oraclehttp" >
               <label class="form-check-label" for="server-oraclehttp">
                 Oracle HTTP
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-postfix" value="postfix" >
               <label class="form-check-label" for="server-postfix">
                 Postfix
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-postgresql" value="postgresql" >
               <label class="form-check-label" for="server-postgresql">
                 PostgreSQL
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-proftpd" value="proftpd" >
               <label class="form-check-label" for="server-proftpd">
                 ProFTPD
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-redis" value="redis" >
               <label class="form-check-label" for="server-redis">
                 Redis
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-squid" value="squid" >
               <label class="form-check-label" for="server-squid">
                 Squid
               </label>
             </div>
-            
 
-          
+
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-tomcat" value="tomcat" >
               <label class="form-check-label" for="server-tomcat">
                 Tomcat
               </label>
             </div>
-            
 
-          
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="server" id="server-wildfly" value="wildfly" >
+              <label class="form-check-label" for="server-wildfly">
+                JBoss/Wildfly
+              </label>
+            </div>
+
             <div class="form-check">
               <input class="form-check-input" type="radio" name="server" id="server-traefik" value="traefik" >
               <label class="form-check-label" for="server-traefik">
                 Traefik
               </label>
             </div>
-            
 
-          
         </div>
 
         <!-- config -->
@@ -338,9 +341,9 @@
       </div>
     </div>
 
-    
+
     <div class="w-100 d-none d-md-block pr-3 pb-1 small text-right text-muted"><a class="text-secondary" href="https://github.com/mozilla/ssl-config-generator/commit/e6bc57e">build e6bc57e</a>, generated 2022-07-28</div>
-    
+
   </footer>
 <script type="text/javascript" src="1cc26c2306e13918bd11.index.js"></script></body>
 </html>

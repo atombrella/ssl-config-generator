@@ -1,0 +1,23 @@
+// {{output.header}}
+// {{{output.link}}}
+
+https://docs.wildfly.org/26/Client_Guide.html
+https://stackoverflow.com/questions/56272061/configure-http-headers-in-wildfly-10
+
+{{#if (includes "old" form.config)}}
+
+
+{{/if}}
+{{#if form.hsts}}
+<filters>
+  <response-header name="strict-transport-security" header-name="Strict-Transport-Security" header-value="max-age=31536000; includeSubDomains;"/>
+</filters>
+{{/if}}
+
+{{#if (includes "modern" form.config)}}
+<!-- TLS 1.3 requires Java 11 or higher -->
+<server-ssl-contexts>
+  <server-ssl-context name="demoSSLContext" cipher-suite-names="{{{join output.ciphers ":"}}}"
+    protocols="TLSv1.3" key-manager="demoKeyManager"/>
+</server-ssl-contexts>
+{{/if}}
