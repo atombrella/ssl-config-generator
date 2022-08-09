@@ -28,7 +28,7 @@ docker build -t sslconfig:1.0 .
 You can then run the webserver:
 
 ```bash
-docker run -p 4000:4000 sslconfig:1.0 -name sslconfig
+docker run -p 3001:3001 -p 5500:5500 sslconfig:1.0 -name sslconfig
 ```
 
 ## Adding new software
