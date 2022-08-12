@@ -187,11 +187,11 @@ module.exports = {
   },
   wildfly: {
     highlighter: 'xml',
-    latestVersion: '2.1.2',
-    name: 'Wildfly/JBoss',
+    latestVersion: '26',
+    name: 'Wildfly (JBoss)',
     supportsHsts: true,
-    supportsOcspStapling: false,  // https://github.com/containous/traefik/issues/212
-    tls13: '2.0.0',
+    supportsOcspStapling: true,
+    tls13: '19.0.0',
     usesOpenssl: false,
-  }
+  },
 };
