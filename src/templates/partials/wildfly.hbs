@@ -1,5 +1,15 @@
-<!-- {{output.header}}
-     {{{output.link}}} -->
+# {{output.header}}
+# {{{output.link}}}
+
+batch
+{{#if form.old }}
+/subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=protocols,value=[TLSv1.0, TLSv1.1, TLSv1.2])
+{{/if}}
+{{#if form.intermediate}}
+{{#if form.modern }}
+
+
+run-batch
 
 {{#if form.hsts}}
 <filters>
