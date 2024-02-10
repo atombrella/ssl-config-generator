@@ -185,7 +185,7 @@ module.exports = {
     tls13: '5.50',
     usesOpenssl: true,
   },
-tomcat: {
+  tomcat: {
     highlighter: 'xml',
     latestVersion: '9.0.30',
     name: 'Tomcat',
@@ -206,7 +206,7 @@ tomcat: {
   },
   wildfly: {
     highlighter: 'xml',
-    latestVersion: '26',
+    latestVersion: '32',
     name: 'Wildfly (JBoss)',
     supportsHsts: true,
     supportsOcspStapling: true,

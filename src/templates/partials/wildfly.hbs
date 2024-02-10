@@ -1,54 +1,19 @@
 # {{output.header}}
 # {{{output.link}}}
 
-# maybe it could be a join
-
 batch
-{{#if form.old }}
-/subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=protocols,value=[TLSv1.0, TLSv1.1, TLSv1.2])
+/subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=protocols,value=[])
+{{#if (includes "modern" form.config)}}
+/subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=cipher-suite-name,value=[{{{join output.ciphers ":"}}}])
 {{else}}
-/subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=protocols,value=[TLSv1.2])
+/subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=cipher-suite-filter,value=[{{{join output.ciphers ":"}}}])
 {{/if}}
-{{#if form.intermediate}}
-{{#if form.modern }}
-
-
-: run-batch
 
 {{#if form.hsts}}
-<filters>
-  <response-header name="strict-transport-security" header-name="Strict-Transport-Security" header-value="max-age=31536000; includeSubDomains;"/>
-</filters>
 {{/if}}
 
 {{#if form.ocsp}}
-<filters>
-  <response-header name="strict-transport-security" header-name="Strict-Transport-Security" header-value="max-age=31536000; includeSubDomains;"/>
-</filters>
+/subsystem=undertow/configuration=filter/response-header=new-response-header:add(header-name="Strict-Transport-Security",header-value="max-age=31536000; includeSubDomains;")
 {{/if}}
 
-<configuration>
-    <authentication-client xmlns="urn:elytron:1.0">
-    <authentication-client xmlns="urn:elytron:1.4">
-        <ssl-contexts>
-            <default-ssl-context name="..."/>
-            <ssl-context name="...">
-                <key-store-ssl-certificate>
-                </key-store-ssl-certificate>
-                <trust-store key-store-name="..." />
-                <cipher-suite selector="..." />
-                <cipher-suite selector="..." names="..." />
-                <protocol names="{{#each output.protocols}} {{this}}{{/each}}" />
-            </ssl-context>
-        </ssl-contexts>
-    </authentication-client>
-</configuration>
-
-{{#if (includes "modern" form.config)}}
-{{#if }}
-<!-- TLS 1.3 requires Java 11 or higher -->
-<server-ssl-contexts>
-  <server-ssl-context name="demoSSLContext" cipher-suite-names="{{{join output.ciphers ":"}}}"
-    protocols="TLSv1.3" key-manager="demoKeyManager"/>
-</server-ssl-contexts>
-{{/if}}
+:run-batch
