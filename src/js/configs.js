@@ -18,7 +18,7 @@ module.exports = {
     name: 'AWS ALB',
     showSupports: false,
     supportsOcspStapling: false,
-    tls13: noSupportedVersion,
+    tls13: '2021.6.1',
     usesOpenssl: false,
   },
   // supported ciphers generated with:
