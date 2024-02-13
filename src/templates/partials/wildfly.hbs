@@ -9,10 +9,11 @@ batch
 /subsystem=elytron/server-ssl-context=applicationSSC:write-attribute(name=cipher-suite-filter,value=[{{{join output.ciphers ":"}}}])
 {{/if}}
 
-{{#if form.hsts}}
+{{#if form.ocsp }}
+/subsystem=elytron/trust-manager=applicationSSC:write-attribute(name=ocsp,value=true)
 {{/if}}
 
-{{#if form.ocsp}}
+{{#if form.hsts}}
 /subsystem=undertow/configuration=filter/response-header=new-response-header:add(header-name="Strict-Transport-Security",header-value="max-age=31536000; includeSubDomains;")
 {{/if}}
 
